@@ -1,0 +1,110 @@
+/* ==========================================================================
+   БЛОК «СПЕЦИАЛИСТЫ» (Ровная сетка + прямоугольные фото 4:5 с родным фоном)
+   ========================================================================== */
+
+#doctors {
+    padding: 80px 20px;
+    max-width: 1140px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#doctors .section-label {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(212, 184, 149, 0.75);
+    margin-bottom: 14px;
+}
+
+#doctors .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(28px, 6vw, 44px);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--text-light, #f3ece7);
+    margin: 0 0 48px 0;
+}
+
+#doctors .section-title em {
+    font-style: italic;
+    color: var(--accent, #e6ccb2);
+}
+
+/* Сетка карточек специалистов */
+.doctors-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+/* Карточка специалиста */
+.doctor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+/* Строгий вертикальный прямоугольник 4:5 для оригинальных фото с фоном */
+.doctor-card img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 5 !important;
+    object-fit: cover !important;
+    object-position: center top;
+    display: block;
+    margin: 0 0 24px 0 !important;
+    border: 1px solid rgba(212, 184, 149, 0.16);
+    background-color: #1a1311;
+    transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.doctor-card:hover img {
+    transform: translateY(-4px);
+    border-color: rgba(212, 184, 149, 0.4);
+}
+
+/* Имя врача */
+.doctor-card h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text-light, #f3ece7);
+    margin: 0 0 8px 0;
+    line-height: 1.25;
+}
+
+/* Должность / специализация */
+.doctor-card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(212, 184, 149, 0.75);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* На планшетах и ПК — 2 ровные колонки */
+@media (min-width: 768px) {
+    #doctors {
+        padding: 110px 48px;
+    }
+
+    .doctors-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 44px;
+    }
+
+    .doctor-card h3 {
+        font-size: 26px;
+    }
+}

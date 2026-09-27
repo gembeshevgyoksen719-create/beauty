@@ -1,0 +1,121 @@
+/* ==========================================================================
+   БЛОК «УСЛУГИ» И КАРТОЧКИ (Ровная сетка + прямоугольные фото 4:5)
+   ========================================================================== */
+
+#services {
+    padding: 80px 20px;
+    max-width: 1140px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#services .section-label {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(212, 184, 149, 0.75);
+    margin-bottom: 14px;
+}
+
+#services .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(28px, 6vw, 44px);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--text-light, #f3ece7);
+    margin: 0 0 48px 0;
+}
+
+#services .section-title em {
+    font-style: italic;
+    color: var(--accent, #e6ccb2);
+}
+
+/* Сетка карточек одинаковой высоты */
+.cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    align-items: stretch;
+}
+
+/* Сама карточка услуги */
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(212, 184, 149, 0.14);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 184, 149, 0.38);
+}
+
+/* Фикс высоты фото: строгий вертикальный прямоугольник 4:5 без обрубков */
+.card img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 5 !important;
+    object-fit: cover !important;
+    object-position: center top;
+    display: block;
+    background-color: #1a1311;
+    margin: 0 !important;
+}
+
+/* Текстовая часть внутри карточки */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+    padding: 28px 22px 32px;
+    box-sizing: border-box;
+}
+
+.card-content h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--text-light, #f3ece7);
+    margin: 0 0 12px 0;
+    line-height: 1.25;
+}
+
+.card-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(243, 236, 231, 0.72);
+    margin: 0;
+}
+
+/* На планшетах и ПК ставим карточки в 2 ровные колонки */
+@media (min-width: 768px) {
+    #services {
+        padding: 110px 48px;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .card-content {
+        padding: 34px 30px 38px;
+    }
+
+    .card-content h3 {
+        font-size: 28px;
+    }
+}

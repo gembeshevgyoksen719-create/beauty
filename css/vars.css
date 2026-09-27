@@ -1,0 +1,342 @@
+/* ==========================================================================
+   1. ЛОКАЛЬНЫЕ ШРИФТЫ ИЗ ПАПКИ ../fonts/
+   ========================================================================== */
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-v31-cyrillic_cyrillic-ext_latin_latin-ext-300.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-v31-cyrillic_cyrillic-ext_latin_latin-ext-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-v31-cyrillic_cyrillic-ext_latin_latin-ext-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/montserrat-v31-cyrillic_cyrillic-ext_latin_latin-ext-600.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/playfair-display-v40-cyrillic_latin_latin-ext-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/playfair-display-v40-cyrillic_latin_latin-ext-italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/playfair-display-v40-cyrillic_latin_latin-ext-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/playfair-display-v40-cyrillic_latin_latin-ext-500italic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ==========================================================================
+   2. ПЕРЕМЕННЫЕ НЕЖНОЙ СВЕТЛОЙ ТЕМЫ (Крем + Шалфей + Изумруд)
+   ========================================================================== */
+
+:root {
+    --bg-dark: #F4F0E6;
+    --bg-main: #F4F0E6;
+    --bg-primary: #F4F0E6;
+    --bg-secondary: #EAE4D7;
+    --bg-card: #96ADA4;
+
+    --text-light: #114B3A;
+    --text-main: #114B3A;
+    --text-primary: #114B3A;
+    --text-muted: #4A635B;
+    --text-on-sage: #FFFFFF;
+
+    --accent: #96ADA4;
+    --accent-dark: #114B3A;
+    --accent-hover: #7F998F;
+    --border-color: rgba(17, 75, 58, 0.16);
+
+    /* Все возможные названия переменных шрифтов для совместимости с твоими CSS */
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-title: 'Playfair Display', Georgia, serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-main: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html,
+body {
+    background-color: #F4F0E6 !important;
+    color: #114B3A !important;
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Принудительно возвращаем Playfair Display на все заголовки */
+h1, h2, h3,
+.hero h1,
+.section-title,
+.cta-title,
+.philosophy-text,
+.footer-info h2 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-weight: 400 !important;
+}
+
+h1 em, h2 em, .philosophy-text em {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-style: italic !important;
+}
+
+/* ==========================================================================
+   3. ГЛАВНЫЙ ЭКРАН И HERO.JPG БЕЗ ОБРЕЗКИ
+   ========================================================================== */
+
+.hero::before,
+.hero::after {
+    display: none !important;
+    content: none !important;
+    opacity: 0 !important;
+}
+
+.hero {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    background-color: #F4F0E6 !important;
+    padding: 84px 20px 10px !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+}
+
+/* Показываем главное фото целиком без обрезки сверху и снизу */
+.hero img {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: 2 !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 460px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
+    border-radius: 20px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: none !important;
+    transform: none !important;
+}
+
+.hero-text {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: 3 !important;
+    width: 100% !important;
+    max-width: 680px !important;
+    background: #F4F0E6 !important;
+    padding: 32px 20px 52px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+}
+
+/* ==========================================================================
+   4. ОСТАЛЬНЫЕ БЛОКИ В НЕЖНОЙ СВЕТЛОЙ ПАЛИТРЕ
+   ========================================================================== */
+
+.header {
+    background-color: rgba(244, 240, 230, 0.94) !important;
+    border-bottom: 1px solid rgba(17, 75, 58, 0.14) !important;
+}
+
+.header .logo {
+    color: #114B3A !important;
+}
+
+.header .btn {
+    background-color: #96ADA4 !important;
+    border-color: #96ADA4 !important;
+    color: #FFFFFF !important;
+    border-radius: 50px !important;
+    padding: 9px 20px !important;
+}
+
+.header .btn:hover {
+    background-color: #114B3A !important;
+    border-color: #114B3A !important;
+    color: #FFFFFF !important;
+}
+
+.hero-label,
+.section-label {
+    color: #527066 !important;
+}
+
+.hero h1,
+.section-title,
+.cta-title,
+.footer-info h2 {
+    color: #114B3A !important;
+}
+
+.hero h1 em,
+.section-title em,
+.cta-title em,
+.philosophy-text em {
+    color: #6C8C80 !important;
+}
+
+.hero p,
+.cta-text,
+.footer-info p {
+    color: #354C44 !important;
+}
+
+.philosophy {
+    background-color: #EFEAE0 !important;
+    border-top: 1px solid rgba(17, 75, 58, 0.12) !important;
+    border-bottom: 1px solid rgba(17, 75, 58, 0.12) !important;
+}
+
+.philosophy-text {
+    color: #114B3A !important;
+}
+
+.card {
+    background-color: #96ADA4 !important;
+    border: none !important;
+    border-radius: 24px !important;
+    box-shadow: 0 12px 30px rgba(17, 75, 58, 0.06);
+}
+
+.card img {
+    background-color: #EAE4D7 !important;
+}
+
+.card-content h3 {
+    color: #FFFFFF !important;
+}
+
+.card-content p {
+    color: rgba(255, 255, 255, 0.92) !important;
+}
+
+.doctor-card img {
+    background-color: #EAE4D7 !important;
+    border: 1px solid rgba(17, 75, 58, 0.12) !important;
+    border-radius: 20px !important;
+}
+
+.doctor-card h3 {
+    color: #114B3A !important;
+}
+
+.doctor-card p {
+    color: #527066 !important;
+}
+
+.cta {
+    background-color: #F4F0E6 !important;
+}
+
+.cta-btn,
+.modal-content button[type="submit"] {
+    background-color: #96ADA4 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 16px 36px !important;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover,
+.modal-content button[type="submit"]:hover {
+    background-color: #114B3A !important;
+    color: #FFFFFF !important;
+}
+
+.footer {
+    background-color: #EAE4D7 !important;
+    border-top: 1px solid rgba(17, 75, 58, 0.14) !important;
+    color: #114B3A !important;
+}
+
+.footer .phone,
+.footer .map-btn,
+.footer .map-btn-address,
+.footer .social-icon {
+    color: #114B3A !important;
+    border-color: rgba(17, 75, 58, 0.22) !important;
+}
+
+.footer-bottom p {
+    color: #527066 !important;
+}
+
+.modal-content {
+    background-color: #F4F0E6 !important;
+    color: #114B3A !important;
+    border: 1px solid rgba(17, 75, 58, 0.2) !important;
+    border-radius: 24px !important;
+}
+
+.modal-content h3,
+.modal-close {
+    color: #114B3A !important;
+}
+
+.modal-content input {
+    background-color: #FFFFFF !important;
+    color: #114B3A !important;
+    border: 1px solid rgba(17, 75, 58, 0.25) !important;
+    border-radius: 12px !important;
+}

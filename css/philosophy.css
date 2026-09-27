@@ -1,0 +1,77 @@
+/* ==========================================================================
+   БЛОК «ФИЛОСОФИЯ» (Симметричный Negative Space без пустых дыр)
+   ========================================================================== */
+
+.philosophy {
+    position: relative;
+    width: 100%;
+    min-height: auto !important;
+    height: auto !important;
+
+    /* Симметричный «дорогой воздух» сверху и снизу */
+    padding: 84px 24px !important;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--bg-dark, #231917);
+
+    /* Тонкие деликатные линии сверху и снизу для обрамления цитаты */
+    border-top: 1px solid rgba(212, 184, 149, 0.12);
+    border-bottom: 1px solid rgba(212, 184, 149, 0.12);
+}
+
+.philosophy-inner {
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Подпись «ФИЛОСОФИЯ» над цитатой */
+.philosophy .section-label {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(212, 184, 149, 0.75);
+    margin: 0 !important;
+}
+
+/* Главный текст цитаты */
+.philosophy-text {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(24px, 5.5vw, 38px);
+    font-weight: 400;
+    line-height: 1.38;
+    color: var(--text-light, #f3ece7);
+    margin: 0 !important;
+}
+
+/* Курсивный акцент «на результат» */
+.philosophy-text em {
+    font-style: italic;
+    color: var(--accent, #e6ccb2);
+}
+
+/* На планшетах и ноутбуках даём чуть больше воздуха */
+@media (min-width: 768px) {
+    .philosophy {
+        padding: 120px 48px !important;
+    }
+
+    .philosophy-inner {
+        gap: 24px;
+    }
+}

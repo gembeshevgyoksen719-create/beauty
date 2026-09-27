@@ -1,0 +1,100 @@
+@media (max-width: 768px) {
+
+  .header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(42, 31, 29, 0.98);
+  }
+
+  .logo { font-size: 20px; letter-spacing: 3px; }
+  .nav { gap: 20px; }
+  .nav a { font-size: 12px; margin: 0; }
+  .btn { padding: 10px 25px; font-size: 11px; }
+
+  /* HERO: фото сверху, текст снизу, никаких плашек и масок */
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    text-align: center;
+    padding: 100px 0 40px 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Отключаем градиентный оверлей на мобилке — он там не нужен */
+  .hero::after {
+    display: none !important;
+  }
+
+  .hero img {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 65vh;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1 !important;
+    display: block;
+  }
+
+  .hero-text {
+    background: none !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    padding: 30px 20px 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-text h1 {
+    font-size: 34px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-text p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    opacity: 0.85 !important;
+  }
+
+  .section-title {
+    font-size: 32px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  .cards-container,
+  .doctors-container {
+    padding: 0 20px 40px;
+    gap: 30px;
+  }
+
+  .card, .doctor-card {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .card img, .doctor-card img {
+    height: 380px;
+  }
+
+  .footer { padding: 50px 20px 20px; }
+  .footer-content { flex-direction: column; gap: 40px; text-align: center; }
+  .footer-info h2 { font-size: 22px; }
+  .footer-info p:nth-of-type(1) { font-size: 18px; }
+  .phone { font-size: 20px; margin: 20px 0; }
+  .social-links { justify-content: center; }
+  .footer-map iframe { height: 250px; }
+  .footer-bottom { margin-top: 50px; }
+
+  .modal-content { padding: 40px 25px; }
+  .modal-content h3 { font-size: 22px; }
+}
